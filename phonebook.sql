@@ -1,5 +1,4 @@
-DROP DATABASE IF EXISTS phone_book;
-CREATE DATABASE phone_book;
+
 
 DROP TABLE IF EXISTS business CASCADE;
 CREATE TABLE business(
