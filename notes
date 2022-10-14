@@ -1,0 +1,11 @@
+UPDATE <table_name> SET <column>= COALESCE($1, <entry>),... WHERE id=$2',[entries, ...] 
+
+app.patch('/url/',(req,res)=>{
+    const{variable} = req.body;
+    client.query('UPDATE <table_name> SET <column>=$1 WHERE tracker_id =$2',[variable.index,..])
+    .then((error,results)=>{
+        try{
+            res.sen('updated)
+        }
+    })
+})

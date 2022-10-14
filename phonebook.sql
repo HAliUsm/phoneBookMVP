@@ -22,7 +22,7 @@ CREATE TABLE owners(
  name         varchar(50) NOT NULL,
  phone_number bigint NOT NULL,
  address      text NOT NULL,
-business_name varchar(50) NOT NULL references business(business_name)
+business_name varchar(50) NOT NULL
 );
 
 INSERT INTO owners(name, phone_number, address, business_name) VALUES 
