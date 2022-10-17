@@ -36,8 +36,7 @@ app.get('/phone_book/owners', (req, res) => {
 })
 app.get('/phone_book/owners/:name', (req,res)=>{
      const param = req.params.name;
-     var str= param+'%'
-    console.log( str)
+
     client.query(`SELECT * FROM owners WHERE name LIKE '${param}%'`)
     .then(result => res.send(result.rows))
 })
@@ -67,6 +66,7 @@ app.get('/phone_book/business', (req, res)=>{
 app.get('/phone_book/business/:name', (req, res)=> {
     const name = req.params.name;
     client.query(`SELECT * FROM business where name='${name}%'`)
+    .then(result => res.send(result.rows))
 })
 
 app.post('/phone_book/business/', (req, res)=>{
